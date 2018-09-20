@@ -84,6 +84,8 @@ Now I make three scatterplots of y vs x, using logical, numeric and factor varia
 ```{r}
 ggplot(problem2_df, aes(x = x, y = y, color = vec_logical)) + geom_point()
 
+ggsave("scatterplot_logical.png")
+
 ggplot(problem2_df, aes(x = x, y = y, color = vec_num)) + geom_point()
 
 ggplot(problem2_df, aes(x = x, y = y, color = vec_factor)) + geom_point()
