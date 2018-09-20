@@ -5,7 +5,7 @@ date: Sep 19, 2018
 output: github_document
 ---
 
-```{r, include = FALSE}
+```{r tidyverse, include = FALSE}
 library(tidyverse)
 ```
 
@@ -13,7 +13,9 @@ library(tidyverse)
 
 First, I create the required data frame:
 
-```{r}
+```{r problem1_df}
+set.seed(1)
+
 problem1_df = tibble(
   vec_unif = runif(n = 10, min = 0, max = 5),
   vec_logical = vec_unif > 2,
@@ -23,3 +25,14 @@ problem1_df = tibble(
 
 problem1_df
 ```
+
+Now I take the mean of each variable in the dataframe:
+
+```{r problem1_mean, eval = FALSE}
+mean(problem1_df$vec_unif)
+mean(problem1_df$vec_logical)
+mean(problem1_df$vec_char)
+mean(problem1_df$vec_factor)
+```
+
+The means of character and factor variables don't work because they are not numerical.
