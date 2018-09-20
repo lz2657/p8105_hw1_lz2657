@@ -36,3 +36,13 @@ mean(problem1_df$vec_factor)
 ```
 
 The means of character and factor variables don't work because they are not numerical.
+
+Then try to convert logical, character, and factor variables to numeric:
+
+```{r problem1_numeric, eval = FALSE}
+as.numeric(problem1_df$vec_logical)
+as.numeric(problem1_df$vec_char)
+as.numeric(problem1_df$vec_factor)
+```
+
+We can see that logical and factor variables can be converted while the charater ones can not.
