@@ -78,3 +78,19 @@ The size of the dataset is `r dim(problem2_df)`.
 The mean and median of x is `r mean(problem2_df$x)`, `r median(problem2_df$x)`, respectively.  
 
 The proportion of cases for which the logical vector is TRUE is `r sum(problem2_df$vec_logical)/1000`.
+
+Now I make three scatterplots of y vs x, using logical, numeric and factor variables as color points
+
+```{r}
+ggplot(problem2_df, aes(x = x, y = y, color = vec_logical)) + geom_point()
+
+ggplot(problem2_df, aes(x = x, y = y, color = vec_num)) + geom_point()
+
+ggplot(problem2_df, aes(x = x, y = y, color = vec_factor)) + geom_point()
+```
+
+The first and third scatterplots are almost the same since the vec_factor variable is just coerced from the vec_logical variable. 
+
+The second one is slightly different from the others with the color, which can vary from 0.00 to 1.00, while there are only two colors labeled as 0.00 and 1.00 in the scatterplot.
+
+All the points in the three scatterplots are divided into two groups with x + y = 0 as the boundary.
