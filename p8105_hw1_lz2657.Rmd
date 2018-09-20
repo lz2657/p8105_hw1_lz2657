@@ -72,3 +72,9 @@ problem2_df = tibble(
   vec_factor = as.factor(vec_logical)
 )
 ```
+
+The size of the dataset is `r dim(problem2_df)`. 
+
+The mean and median of x is `r mean(problem2_df$x)`, `r median(problem2_df$x)`, respectively.  
+
+The proportion of cases for which the logical vector is TRUE is `r sum(problem2_df$vec_logical)/1000`.
